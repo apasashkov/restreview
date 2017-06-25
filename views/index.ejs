@@ -1,0 +1,39 @@
+<% include partials/header%>
+
+
+<div class="container">
+<header class="jumbotron">
+  <div class="container">
+    <h1>
+     <i class="fa fa-cutlery" aria-hidden="true"></i>
+    Welcolme to RestReview
+    </h1>
+    <p>
+    View our hand-picked restaraunts from all over Kiev!
+    </p>
+
+    <a class="btn btn-primary btn-large" href="restaraunts/new">Add Restaraunt</a>
+  </div>
+
+</header>
+
+
+<div class="row text-center"  style="display:flex;flex-wrap:wrap">
+  <% restaraunts.forEach(function(rest){ %>
+  <div class="col-md-3 col-sm-6">
+    <div class="thumbnail">
+      <img src="<%= rest.image %>" alt=""/>
+      <div class="caption">
+        <h4> <%=rest.name %> </h4>
+      </div>
+      <p>
+      <a class="btn btn-primary" href="/restaraunts/<%=rest._id%>">More info</a>
+      </p>
+    </div>
+  </div>
+    <%}) %>
+</div>
+
+</div>
+
+<% include partials/footer%>
