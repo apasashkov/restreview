@@ -23,10 +23,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 
-mongoose.connect("mongodb://localhost/restaraunts");
-//mongoose.connect("mongodb://anton:anton@ds139072.mlab.com:39072/restreview");
-//mongoose.connect(process.env.DATABASEURL);
-console.log(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL);
 
 //seedDB();
 
