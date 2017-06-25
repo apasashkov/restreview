@@ -22,8 +22,8 @@ app.use(express.static(__dirname+"/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-
-mongoose.connect(process.env.DATABASEURL);
+var url=process.env.DATABASEURL || "mongodb://localhost/restaraunts";
+mongoose.connect(url);
 
 //seedDB();
 
